@@ -37,7 +37,7 @@ source ../patch.d/*.sh
 
 make ARCH=arm64 .config
 
-nice make -j`nproc` bindeb-pkg
+nice make ARCH=arm64 -j`nproc` bindeb-pkg
 
 
 
