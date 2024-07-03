@@ -10,7 +10,8 @@ apt update
 apt install -y git wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev debhelper libelf-dev u-boot-tools gcc-aarch64-linux-gnu
 apt build-dep -y linux
 
-export CROSS_COMPILE=gcc-aarch64-linux-gnu
+export CROSS_COMPILE=aarch64-linux-gnu-
+export ARCH=arm64
 
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
@@ -37,7 +38,7 @@ source ../patch.d/*.sh
 # CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
 # make ARCH=arm64 deb-pkg -j"$CPU_CORES"
 
-make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu .config
+make ARCH=arm64 .config
 
 # nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu -j`nproc` bindeb-pkg
 nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu bindeb-pkg
