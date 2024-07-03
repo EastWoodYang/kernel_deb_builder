@@ -37,7 +37,8 @@ source ../patch.d/*.sh
 
 make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu .config
 
-nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu -j`nproc` bindeb-pkg
+# nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu -j`nproc` bindeb-pkg
+nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu bindeb-pkg
 
 
 
