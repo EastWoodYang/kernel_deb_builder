@@ -14,9 +14,9 @@ apt build-dep -y linux
 cd "${GITHUB_WORKSPACE}" || exit
 
 # download kernel source
-wget http://www.kernel.org/pub/linux/kernel/v5.x/linux-"$VERSION".tar.xz
-tar -xf linux-"$VERSION".tar.xz
-cd linux-"$VERSION" || exit
+wget https://github.com/unifreq/linux-6.6.y/archive/refs/tags/linux-6.6.31.tar.gz
+tar -xf linux-6.6.31.tar.gz
+cd linux-6.6.y-linux-6.6.31 || exit
 
 # copy config file
 cp ../config .config
