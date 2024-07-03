@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     container: debian:buster
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - run: |
+        git clone -q --single-branch --depth=1 --branch=meson64-6.6 https://github.com/devmfc/linux.git
 
       - name: Build
         run: bash build_action.sh
