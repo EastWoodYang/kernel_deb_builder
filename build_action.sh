@@ -7,7 +7,7 @@ sed -i "/deb-src/s/# //g" /etc/apt/sources.list
 
 # install dep
 apt update
-apt install -y wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev
+apt install -y git wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev
 apt build-dep -y linux
 
 # change dir to workplace
@@ -15,6 +15,7 @@ cd "${GITHUB_WORKSPACE}" || exit
 
 # download kernel source
 
+git clone -q --single-branch --depth=1 --branch=meson64-6.6 https://github.com/devmfc/linux.git
 cd linux
 # wget https://github.com/unifreq/linux-6.6.y/archive/refs/tags/linux-6.6.31.tar.gz
 # tar -xf linux-6.6.31.tar.gz
