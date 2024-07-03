@@ -10,6 +10,8 @@ apt update
 apt install -y git wget xz-utils make gcc flex bison dpkg-dev bc rsync kmod cpio libssl-dev debhelper libelf-dev u-boot-tools gcc-aarch64-linux-gnu
 apt build-dep -y linux
 
+export CROSS_COMPILE=gcc-aarch64-linux-gnu
+
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
 
