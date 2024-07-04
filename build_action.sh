@@ -18,8 +18,8 @@ cd "${GITHUB_WORKSPACE}" || exit
 
 # download kernel source
 
-git clone -q --single-branch --depth=1 --branch=main https://github.com/unifreq/linux-6.6.y
-cd linux-6.6.y
+git clone -q --single-branch --depth=1 --branch=meson64-6.6 https://github.com/devmfc/linux.git
+cd linux
 # wget https://github.com/unifreq/linux-6.6.y/archive/refs/tags/linux-6.6.31.tar.gz
 # tar -xf linux-6.6.31.tar.gz
 # cd linux-6.6.y-linux-6.6.31 || exit
