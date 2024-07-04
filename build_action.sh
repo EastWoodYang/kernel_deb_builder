@@ -35,13 +35,9 @@ scripts/config --disable DEBUG_INFO
 source ../patch.d/*.sh
 
 # build deb packages
-# CPU_CORES=$(($(grep -c processor < /proc/cpuinfo)*2))
-# make ARCH=arm64 deb-pkg -j"$CPU_CORES"
-
-make ARCH=arm64 .config
-
+make .config
 nice make -j`nproc` bindeb-pkg
-# nice make ARCH=arm64 CROSS_COMPLE=gcc-aarch64-linux-gnu bindeb-pkg
+# nice make bindeb-pkg
 
 
 
