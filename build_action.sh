@@ -35,7 +35,7 @@ scripts/config --disable DEBUG_INFO
 source ../patch.d/*.sh
 
 # build deb packages
-make .config
+make olddefconfig
 nice make -j`nproc` bindeb-pkg
 # nice make bindeb-pkg
 
