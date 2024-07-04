@@ -12,6 +12,7 @@ apt build-dep -y linux
 
 export CROSS_COMPILE=aarch64-linux-gnu-
 export ARCH=arm64
+export LOCALVERSION="6.6.31-hassbox"
 
 # change dir to workplace
 cd "${GITHUB_WORKSPACE}" || exit
